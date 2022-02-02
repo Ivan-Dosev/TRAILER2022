@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E093EC227A6F8B3009A2E4F /* WarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E093EC127A6F8B3009A2E4F /* WarkView.swift */; };
+		6E093EC427A6FEA7009A2E4F /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E093EC327A6FEA7009A2E4F /* InfoView.swift */; };
+		6E093EC627A6FEB8009A2E4F /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E093EC527A6FEB8009A2E4F /* ServiceView.swift */; };
+		6E093EC827A6FECB009A2E4F /* SeldingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E093EC727A6FECB009A2E4F /* SeldingView.swift */; };
+		6E093ECA27A70319009A2E4F /* DismissView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E093EC927A70319009A2E4F /* DismissView.swift */; };
+		6E0E1CAA27A66AE10035A3EF /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E1CA927A66AE10035A3EF /* QRCodeView.swift */; };
+		6E14D35627A5AAF20085934D /* AuthRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E14D35527A5AAF20085934D /* AuthRegistration.swift */; };
+		6E14D35827A5AEA30085934D /* FirstProView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E14D35727A5AEA30085934D /* FirstProView.swift */; };
+		6E14D35A27A5AEBF0085934D /* Adress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E14D35927A5AEBF0085934D /* Adress.swift */; };
+		6E188CE527A6800E00F4D1E4 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 6E188CE427A6800E00F4D1E4 /* CodeScanner */; };
+		6E21129F27A98E830029A882 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E21129E27A98E830029A882 /* LogoView.swift */; };
 		6E3AD49A27A4EFA000C02EED /* TRAILER2022App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AD49927A4EFA000C02EED /* TRAILER2022App.swift */; };
 		6E3AD49C27A4EFA000C02EED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AD49B27A4EFA000C02EED /* ContentView.swift */; };
 		6E3AD49E27A4EFA100C02EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E3AD49D27A4EFA100C02EED /* Assets.xcassets */; };
@@ -14,6 +25,15 @@
 		6E3AD4AB27A4EFA100C02EED /* TRAILER2022Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AD4AA27A4EFA100C02EED /* TRAILER2022Tests.swift */; };
 		6E3AD4B527A4EFA100C02EED /* TRAILER2022UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AD4B427A4EFA100C02EED /* TRAILER2022UITests.swift */; };
 		6E3AD4B727A4EFA100C02EED /* TRAILER2022UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AD4B627A4EFA100C02EED /* TRAILER2022UITestsLaunchTests.swift */; };
+		6E3AD4C427A4F02C00C02EED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E3AD4C327A4F02C00C02EED /* GoogleService-Info.plist */; };
+		6E3AD4C727A4F09700C02EED /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3AD4C627A4F09700C02EED /* FirebaseAuth */; };
+		6E3AD4C927A4F09700C02EED /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3AD4C827A4F09700C02EED /* FirebaseFirestore */; };
+		6E3AD4CB27A4F09700C02EED /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3AD4CA27A4F09700C02EED /* FirebaseFirestoreSwift-Beta */; };
+		6E3AD4CD27A4F09700C02EED /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3AD4CC27A4F09700C02EED /* FirebaseStorage */; };
+		6E3AD4CF27A4F09700C02EED /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3AD4CE27A4F09700C02EED /* FirebaseStorageSwift-Beta */; };
+		6E3AD4D227A4F1EE00C02EED /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AD4D127A4F1EE00C02EED /* FirebaseModel.swift */; };
+		6E3AD4D427A4F29C00C02EED /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AD4D327A4F29C00C02EED /* ModelView.swift */; };
+		6E3AD4D627A50D5A00C02EED /* Scrooll-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6E3AD4D527A50D5A00C02EED /* Scrooll-text.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +54,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E093EC127A6F8B3009A2E4F /* WarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarkView.swift; sourceTree = "<group>"; };
+		6E093EC327A6FEA7009A2E4F /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		6E093EC527A6FEB8009A2E4F /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
+		6E093EC727A6FECB009A2E4F /* SeldingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeldingView.swift; sourceTree = "<group>"; };
+		6E093EC927A70319009A2E4F /* DismissView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissView.swift; sourceTree = "<group>"; };
+		6E0E1CA827A655BA0035A3EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6E0E1CA927A66AE10035A3EF /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		6E14D35527A5AAF20085934D /* AuthRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRegistration.swift; sourceTree = "<group>"; };
+		6E14D35727A5AEA30085934D /* FirstProView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstProView.swift; sourceTree = "<group>"; };
+		6E14D35927A5AEBF0085934D /* Adress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adress.swift; sourceTree = "<group>"; };
+		6E21129E27A98E830029A882 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		6E3AD49627A4EFA000C02EED /* TRAILER2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRAILER2022.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3AD49927A4EFA000C02EED /* TRAILER2022App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRAILER2022App.swift; sourceTree = "<group>"; };
 		6E3AD49B27A4EFA000C02EED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +75,10 @@
 		6E3AD4B027A4EFA100C02EED /* TRAILER2022UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TRAILER2022UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3AD4B427A4EFA100C02EED /* TRAILER2022UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRAILER2022UITests.swift; sourceTree = "<group>"; };
 		6E3AD4B627A4EFA100C02EED /* TRAILER2022UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRAILER2022UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6E3AD4C327A4F02C00C02EED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6E3AD4D127A4F1EE00C02EED /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
+		6E3AD4D327A4F29C00C02EED /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
+		6E3AD4D527A50D5A00C02EED /* Scrooll-text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Scrooll-text.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +86,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3AD4CF27A4F09700C02EED /* FirebaseStorageSwift-Beta in Frameworks */,
+				6E3AD4CB27A4F09700C02EED /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				6E188CE527A6800E00F4D1E4 /* CodeScanner in Frameworks */,
+				6E3AD4CD27A4F09700C02EED /* FirebaseStorage in Frameworks */,
+				6E3AD4C727A4F09700C02EED /* FirebaseAuth in Frameworks */,
+				6E3AD4C927A4F09700C02EED /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +135,12 @@
 		6E3AD49827A4EFA000C02EED /* TRAILER2022 */ = {
 			isa = PBXGroup;
 			children = (
+				6E0E1CA827A655BA0035A3EF /* Info.plist */,
 				6E3AD49927A4EFA000C02EED /* TRAILER2022App.swift */,
 				6E3AD49B27A4EFA000C02EED /* ContentView.swift */,
+				6E3AD4D527A50D5A00C02EED /* Scrooll-text.txt */,
+				6E3AD4D027A4F1B400C02EED /* Model */,
+				6E3AD4C327A4F02C00C02EED /* GoogleService-Info.plist */,
 				6E3AD49D27A4EFA100C02EED /* Assets.xcassets */,
 				6E3AD49F27A4EFA100C02EED /* Preview Content */,
 			);
@@ -127,6 +172,25 @@
 			path = TRAILER2022UITests;
 			sourceTree = "<group>";
 		};
+		6E3AD4D027A4F1B400C02EED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6E14D35727A5AEA30085934D /* FirstProView.swift */,
+				6E093EC927A70319009A2E4F /* DismissView.swift */,
+				6E14D35927A5AEBF0085934D /* Adress.swift */,
+				6E3AD4D127A4F1EE00C02EED /* FirebaseModel.swift */,
+				6E14D35527A5AAF20085934D /* AuthRegistration.swift */,
+				6E3AD4D327A4F29C00C02EED /* ModelView.swift */,
+				6E0E1CA927A66AE10035A3EF /* QRCodeView.swift */,
+				6E093EC127A6F8B3009A2E4F /* WarkView.swift */,
+				6E21129E27A98E830029A882 /* LogoView.swift */,
+				6E093EC327A6FEA7009A2E4F /* InfoView.swift */,
+				6E093EC527A6FEB8009A2E4F /* ServiceView.swift */,
+				6E093EC727A6FECB009A2E4F /* SeldingView.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +207,14 @@
 			dependencies = (
 			);
 			name = TRAILER2022;
+			packageProductDependencies = (
+				6E3AD4C627A4F09700C02EED /* FirebaseAuth */,
+				6E3AD4C827A4F09700C02EED /* FirebaseFirestore */,
+				6E3AD4CA27A4F09700C02EED /* FirebaseFirestoreSwift-Beta */,
+				6E3AD4CC27A4F09700C02EED /* FirebaseStorage */,
+				6E3AD4CE27A4F09700C02EED /* FirebaseStorageSwift-Beta */,
+				6E188CE427A6800E00F4D1E4 /* CodeScanner */,
+			);
 			productName = TRAILER2022;
 			productReference = 6E3AD49627A4EFA000C02EED /* TRAILER2022.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +287,10 @@
 				Base,
 			);
 			mainGroup = 6E3AD48D27A4EFA000C02EED;
+			packageReferences = (
+				6E3AD4C527A4F09700C02EED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				6E188CE327A6800D00F4D1E4 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 6E3AD49727A4EFA000C02EED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +309,8 @@
 			files = (
 				6E3AD4A127A4EFA100C02EED /* Preview Assets.xcassets in Resources */,
 				6E3AD49E27A4EFA100C02EED /* Assets.xcassets in Resources */,
+				6E3AD4D627A50D5A00C02EED /* Scrooll-text.txt in Resources */,
+				6E3AD4C427A4F02C00C02EED /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +335,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E3AD4D227A4F1EE00C02EED /* FirebaseModel.swift in Sources */,
+				6E093EC627A6FEB8009A2E4F /* ServiceView.swift in Sources */,
 				6E3AD49C27A4EFA000C02EED /* ContentView.swift in Sources */,
+				6E3AD4D427A4F29C00C02EED /* ModelView.swift in Sources */,
+				6E14D35A27A5AEBF0085934D /* Adress.swift in Sources */,
+				6E093EC827A6FECB009A2E4F /* SeldingView.swift in Sources */,
+				6E0E1CAA27A66AE10035A3EF /* QRCodeView.swift in Sources */,
+				6E14D35627A5AAF20085934D /* AuthRegistration.swift in Sources */,
 				6E3AD49A27A4EFA000C02EED /* TRAILER2022App.swift in Sources */,
+				6E14D35827A5AEA30085934D /* FirstProView.swift in Sources */,
+				6E093EC427A6FEA7009A2E4F /* InfoView.swift in Sources */,
+				6E21129F27A98E830029A882 /* LogoView.swift in Sources */,
+				6E093ECA27A70319009A2E4F /* DismissView.swift in Sources */,
+				6E093EC227A6F8B3009A2E4F /* WarkView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,11 +512,15 @@
 				DEVELOPMENT_TEAM = 2FYTR3E5Q9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TRAILER2022/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan QR code";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,11 +545,15 @@
 				DEVELOPMENT_TEAM = 2FYTR3E5Q9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TRAILER2022/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan QR code";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,6 +703,58 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6E188CE327A6800D00F4D1E4 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		6E3AD4C527A4F09700C02EED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6E188CE427A6800E00F4D1E4 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E188CE327A6800D00F4D1E4 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+		6E3AD4C627A4F09700C02EED /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E3AD4C527A4F09700C02EED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		6E3AD4C827A4F09700C02EED /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E3AD4C527A4F09700C02EED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		6E3AD4CA27A4F09700C02EED /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E3AD4C527A4F09700C02EED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		6E3AD4CC27A4F09700C02EED /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E3AD4C527A4F09700C02EED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		6E3AD4CE27A4F09700C02EED /* FirebaseStorageSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6E3AD4C527A4F09700C02EED /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6E3AD48E27A4EFA000C02EED /* Project object */;
 }

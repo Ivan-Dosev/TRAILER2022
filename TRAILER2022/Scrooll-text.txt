@@ -1,0 +1,44 @@
+struct LicenseArdaView: View{
+    @ObservedObject var model: Model = Model()
+   
+    var body: some View{
+        
+        VStack(alignment: .leading) {
+            ScrollView (.vertical) {
+                    ScrollView (.horizontal) {
+                        VStack(alignment: .leading) {
+                            Text(model.data)
+                                .padding()
+                                .lineLimit(nil)
+                        }
+                          .font(.system(size: 20))
+                    }
+                    .padding()
+            }
+                   
+        }.padding()
+         .frame(width: UIScreen.main.bounds.width / 1.05 , height:  600, alignment: .leading)
+         .background(RoundedRectangle(cornerRadius: 5).stroke(Color.red, style: StrokeStyle(lineWidth: 2)))
+        
+        Spacer()
+    }
+}
+
+class Model: ObservableObject {
+    @Published var data: String = ""
+    init() { self.load(file: "dossi-text") }
+    func load(file: String) {
+        if let filepath = Bundle.main.path(forResource: file, ofType: "txt") {
+            do {
+                let contents = try String(contentsOfFile: filepath)
+                DispatchQueue.main.async {
+                    self.data = contents
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("File not found")
+        }
+    }
+}
