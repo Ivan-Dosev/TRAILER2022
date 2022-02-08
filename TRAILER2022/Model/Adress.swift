@@ -41,22 +41,22 @@ struct Adress: View {
                         
 
                      
-                        Text("За да използвате приложението\nтрябва да се регистрирате\nс вашия телефонен номер\n")
+                        Text("For access\nenter your phone number")
                           
-                        Text("Ако регистрацията е успешна\nще получите код за достъп")
+                        Text("You will receive code for access")
                           
                         TextField("your name", text: $name)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                         VStack(alignment: .leading, spacing: 10) {
 
                             HStack{
-                                TextField("phone namber", text: $no)
+                                TextField("phone number", text: $no)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .frame(width: 200)
                                 Spacer()
                             }
                             HStack{
-                                TextField("+cod", text: $ccode)
+                                TextField("+code", text: $ccode)
                                     .textFieldStyle(RoundedBorderTextFieldStyle())
                                     .frame(width: 100)
                                 Spacer()

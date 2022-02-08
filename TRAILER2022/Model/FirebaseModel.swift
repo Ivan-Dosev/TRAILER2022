@@ -14,6 +14,9 @@ import FirebaseAuth
 import Firebase
 import SwiftUI
 import Combine
+import CryptoKit
+import web3swift
+import PromiseKit
 
 struct Names : Codable{
     
@@ -157,7 +160,7 @@ class Mara : ObservableObject  {
         let meta = StorageMetadata()
             meta.contentType = "txt"
         guard let encoder  = try? JSONEncoder().encode(info) else { return}
-
+             
 
         do{
             let _ = try! storage.child(trailerNumber!).putData(encoder , metadata: meta) { (metadata, err) in
@@ -168,18 +171,62 @@ class Mara : ObservableObject  {
                 }
 
                     DispatchQueue.main.async { [self] in
-                        storage.child("json-Dossi").downloadURL{( url , err ) in
+                        storage.child(trailerNumber!).downloadURL{( url , err ) in
                             guard let downloadURL = url else {
                                 print("error .. >> url")
                                 return
                             }
                             print("url >> \(downloadURL.relativeString)")
+                            do{
+                                let data = try  NSData(contentsOf: downloadURL)
+                           
+                                let hashedValue = SHA256.hash(data: data! )
+                                print("Hashed Value: \(hashedValue)")
+                             
+                                contractAddress = trailerNumber!
+                                print(">>>>>")
+                                print( contractAddress)
+                                
+                                wallet = getWallet(password: password, privateKey: "0b595c19b612180c8d0ebd015ed7c691e82dcfdeadf1733fa561ec2994a4be21", walletName:"GanacheWallet")
+                          
+                                contract = ProjectContract(wallet: wallet!, contractString: contractAddress)
+                                
+                                createNewProject( hashedValue: hashedValue)
+                                
+                            }catch{ print("no  > Hashed Value")}
                         }
 
                     }
             }
         }catch{
 
+        }
+    }
+    
+    func createNewProject( hashedValue: SHA256.Digest) {
+        
+        let projectEnd = "\(hashedValue)"
+
+        let parameters = [projectEnd] as [AnyObject]
+        firstly {
+            // Call contract method
+            callContractMethod(method: .projectContract, parameters: parameters,password: "dakata_7b")
+        }.done { response in
+            // print out response
+            print("createNewProject response \(response)")
+            // Call out get projectTitle
+            self.getProjectTitle()
+        }
+    }
+
+    func getProjectTitle() {
+        let parameters = [] as [AnyObject]
+        firstly {
+            // Call contract method
+            callContractMethod(method: .getProjectTitle, parameters: parameters,password: nil)
+        }.done { response in
+            // print out response
+            print("getProjectTitle response \(response)")
         }
     }
 }

@@ -136,12 +136,14 @@ struct ServiceView: View {
             }
             .sheet(isPresented: $isPresentingScanner){ scannerSheet }
             .alert(isPresented: $alert) {
-                Alert(title: Text("Blockchain"), message: Text("Do you want to save to Blockchain"), dismissButton: .default(Text("ok"), action: {
+                Alert(title: Text("Blockchain"), message: Text("Do you want to save to Blockchain"), dismissButton: .default(Text("Yes"), action: {
                     
                     saveBlockchane()
 
                     self.alert.toggle()
-                    presentationMode.wrappedValue.dismiss()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                        presentationMode.wrappedValue.dismiss()
+                    }
 
 
                     

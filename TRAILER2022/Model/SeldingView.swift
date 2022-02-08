@@ -128,7 +128,10 @@ struct SeldingView: View {
                     saveBlockchane()
  
                     self.alert.toggle()
-                    presentationMode.wrappedValue.dismiss()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                  
 
                     
                 }))
