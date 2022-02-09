@@ -50,11 +50,22 @@ class Mara : ObservableObject  {
     let db = Firestore.firestore()
     let storage = Storage.storage().reference()
     
+    @Published var verifyString = ""
+    @Published var isInfo : Bool = false
     @Published var auth : String = ""
     @Published var taskTo   : AuthAll?
     @Published var taskFrom : AuthAll?
     @Published var fire = [Task]()
-    @Published var info = [TrailerInfo]()
+    @Published var info = [TrailerInfo](){
+        didSet{
+            if isInfo{
+                
+                verifyHash()
+                self.isInfo = false
+                
+            }
+        }
+    }
     @Published var isValidButton : Bool = false
     @Published var isTrailer: Bool = false
     @Published var urlTrailer: String = ""
@@ -69,6 +80,29 @@ class Mara : ObservableObject  {
       //  loadData()
         store()
         auth_DD()
+    }
+    
+    func verifyHash() {
+        
+        guard let encoder  = try? JSONEncoder().encode(info) else { return}
+        let  dossihashedValue = "\(SHA256.hash(data: encoder ))"
+        
+        contractAddress = trailerNumber!
+        wallet = getWallet(password: password, privateKey: "0b595c19b612180c8d0ebd015ed7c691e82dcfdeadf1733fa561ec2994a4be21", walletName:"GanacheWallet")
+        contract = ProjectContract(wallet: wallet!, contractString: contractAddress)
+
+        
+        getProjectString(nomer: 0) { str in
+            
+            if str == dossihashedValue {
+                self.verifyString = ""
+            }else{
+                self.verifyString = "Problem !!!"
+            }
+                 print("srt :... \(str)")
+                 print("dosi:... \(dossihashedValue)")
+                
+            }
     }
      
     func loadURL(name: String) {
@@ -224,6 +258,22 @@ class Mara : ObservableObject  {
         firstly {
             // Call contract method
             callContractMethod(method: .getProjectTitle, parameters: parameters,password: nil)
+        }.done { response in
+            // print out response
+            print("getProjectTitle response \(response)")
+        }
+    }
+    func getProjectString(nomer: Int, onDossi: @escaping (String) -> Void){
+        let parameters = [] as [AnyObject]
+      
+        firstly {
+            // Call contract method
+            callContractMethodDossi(nomer: nomer ,method: .getProjectTitle, parameters: parameters,password: nil) { str in
+                print("Dossi ... \(str as String )")
+
+                   onDossi(str)
+              
+            }
         }.done { response in
             // print out response
             print("getProjectTitle response \(response)")

@@ -46,6 +46,7 @@ struct InfoView: View {
                                      self.isNumberTrailerScanner = true
                                      self.isLoading = true
                                           arda.info = []
+                                       
                     }) {
                         Text("Scan ")
                             .padding()
@@ -110,6 +111,10 @@ struct InfoView: View {
                             } .font(.system(size: 8))
                                 .onAppear(){
                                     self.isLoading = false
+                                    if !arda.info.isEmpty {
+                                        arda.isInfo = true
+                                    }
+                                 
                                 }
                         }
                    
@@ -117,6 +122,7 @@ struct InfoView: View {
            
 
             }.overlay(isLoading ? ProgressView().toAnyView() : EmptyView().toAnyView())
+                .overlay(Text(arda.verifyString).foregroundColor(.red).rotationEffect(.init(degrees: -45)).font(.system(size: 50)))
         }
         .sheet(isPresented: $isNumberTrailerScanner){ scannerSheet }
     }
