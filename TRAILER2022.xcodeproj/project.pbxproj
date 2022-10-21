@@ -33,7 +33,6 @@
 		6E3AD4AB27A4EFA100C02EED /* TRAILER2022Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AD4AA27A4EFA100C02EED /* TRAILER2022Tests.swift */; };
 		6E3AD4B527A4EFA100C02EED /* TRAILER2022UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AD4B427A4EFA100C02EED /* TRAILER2022UITests.swift */; };
 		6E3AD4B727A4EFA100C02EED /* TRAILER2022UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AD4B627A4EFA100C02EED /* TRAILER2022UITestsLaunchTests.swift */; };
-		6E3AD4C427A4F02C00C02EED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E3AD4C327A4F02C00C02EED /* GoogleService-Info.plist */; };
 		6E3AD4C727A4F09700C02EED /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3AD4C627A4F09700C02EED /* FirebaseAuth */; };
 		6E3AD4C927A4F09700C02EED /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3AD4C827A4F09700C02EED /* FirebaseFirestore */; };
 		6E3AD4CB27A4F09700C02EED /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 6E3AD4CA27A4F09700C02EED /* FirebaseFirestoreSwift-Beta */; };
@@ -42,6 +41,7 @@
 		6E3AD4D227A4F1EE00C02EED /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AD4D127A4F1EE00C02EED /* FirebaseModel.swift */; };
 		6E3AD4D427A4F29C00C02EED /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3AD4D327A4F29C00C02EED /* ModelView.swift */; };
 		6E3AD4D627A50D5A00C02EED /* Scrooll-text.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6E3AD4D527A50D5A00C02EED /* Scrooll-text.txt */; };
+		6EB9EB7B2902BA0B00B3EC5F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EB9EB7A2902BA0B00B3EC5F /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,10 +90,10 @@
 		6E3AD4B027A4EFA100C02EED /* TRAILER2022UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TRAILER2022UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3AD4B427A4EFA100C02EED /* TRAILER2022UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRAILER2022UITests.swift; sourceTree = "<group>"; };
 		6E3AD4B627A4EFA100C02EED /* TRAILER2022UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRAILER2022UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		6E3AD4C327A4F02C00C02EED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E3AD4D127A4F1EE00C02EED /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
 		6E3AD4D327A4F29C00C02EED /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		6E3AD4D527A50D5A00C02EED /* Scrooll-text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Scrooll-text.txt"; sourceTree = "<group>"; };
+		6EB9EB7A2902BA0B00B3EC5F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Images/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,12 +165,12 @@
 			isa = PBXGroup;
 			children = (
 				6E0E1CA827A655BA0035A3EF /* Info.plist */,
+				6EB9EB7A2902BA0B00B3EC5F /* GoogleService-Info.plist */,
 				6E3AD49927A4EFA000C02EED /* TRAILER2022App.swift */,
 				6E3AD49B27A4EFA000C02EED /* ContentView.swift */,
 				6E3AD4D527A50D5A00C02EED /* Scrooll-text.txt */,
 				6E33DCE727B1345900674A34 /* web3 */,
 				6E3AD4D027A4F1B400C02EED /* Model */,
-				6E3AD4C327A4F02C00C02EED /* GoogleService-Info.plist */,
 				6E3AD49D27A4EFA100C02EED /* Assets.xcassets */,
 				6E3AD49F27A4EFA100C02EED /* Preview Content */,
 			);
@@ -341,9 +341,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E3AD4A127A4EFA100C02EED /* Preview Assets.xcassets in Resources */,
+				6EB9EB7B2902BA0B00B3EC5F /* GoogleService-Info.plist in Resources */,
 				6E3AD49E27A4EFA100C02EED /* Assets.xcassets in Resources */,
 				6E3AD4D627A50D5A00C02EED /* Scrooll-text.txt in Resources */,
-				6E3AD4C427A4F02C00C02EED /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +549,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TRAILER2022/Preview Content\"";
-				DEVELOPMENT_TEAM = 2FYTR3E5Q9;
+				DEVELOPMENT_TEAM = 59D3872DX3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TRAILER2022/Info.plist;
@@ -566,7 +566,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = IvanDosev.TRAILER2022;
+				PRODUCT_BUNDLE_IDENTIFIER = IvanDosev.TRAILER2022New;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -582,7 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TRAILER2022/Preview Content\"";
-				DEVELOPMENT_TEAM = 2FYTR3E5Q9;
+				DEVELOPMENT_TEAM = 59D3872DX3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TRAILER2022/Info.plist;
@@ -599,7 +599,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = IvanDosev.TRAILER2022;
+				PRODUCT_BUNDLE_IDENTIFIER = IvanDosev.TRAILER2022New;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
