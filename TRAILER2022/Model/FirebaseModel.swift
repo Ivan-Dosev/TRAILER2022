@@ -27,6 +27,16 @@ struct Names : Codable{
     var serviceNote : String
     
 }
+
+struct Characteristic: Identifiable , Codable {
+    var id = UUID().uuidString
+    var authNumber  : String
+    var modelTre    : String
+    var colorTre    : String
+    var dateTre     : String
+    var scanner     : String
+}
+
 struct TrailerInfo : Codable, Identifiable {
     
                 var id = UUID().uuidString
@@ -66,6 +76,16 @@ class Mara : ObservableObject  {
             }
         }
     }
+    @Published var allTre        : [Characteristic] = []
+    @Published var isID          : Bool = false {
+        didSet{
+            if isID && !treID.isEmpty {
+                chackauthName(authNumber: charScener)
+            }
+        }
+    }
+    @Published var treID         : String = ""
+    @Published var charScener    : String = ""
     @Published var isValidButton : Bool = false
     @Published var isTrailer: Bool = false
     @Published var urlTrailer: String = ""
@@ -74,12 +94,12 @@ class Mara : ObservableObject  {
             loadURL(name: trailerNumber! )
         }
     }
-   
     
     init(){
       //  loadData()
         store()
         auth_DD()
+       loadAllTre()
     }
     
     func verifyHash() {
@@ -114,6 +134,84 @@ class Mara : ObservableObject  {
             }
         }
     }
+    
+    func loadAllTre() {
+
+        db.collection("ФTRE").whereField("authNumber", isEqualTo: auth).addSnapshotListener{ [self] (snapShot, err) in
+    
+            guard let document = snapShot?.documents else { return }
+            print("document.count = \(document.count)")
+            self.allTre = document.compactMap{ doc -> Characteristic in
+               
+                do{
+                    let arda = try! doc.data(as: Characteristic.self)
+                    return arda!
+                    
+                }catch{
+                    print("error..>>")
+                }
+            }
+        }
+    }
+    
+    
+    func isCharacteristic(characteristic: Characteristic) {
+          self.isID = false
+          self.treID = ""
+        
+        DispatchQueue.main.async { [self] in
+            storage.child(characteristic.scanner).downloadURL{( url , err ) in
+                if let downloadURL = url {
+                    db.collection("ФTRE").whereField("scanner", isEqualTo: characteristic.scanner).addSnapshotListener{ [self] (snapShot, err) in
+                      guard let document = snapShot?.documents else { return }
+                        document.map{ queryDocument  in
+                            print(">>>\(queryDocument.documentID)")
+                            self.treID = "\(queryDocument.documentID)"
+                            self.charScener = characteristic.authNumber
+                          //    self.isID = true
+                          //  chackauthName(authNumber: characteristic.authNumber)
+                        
+                        }
+                    }
+                }
+                else {
+                    saveCaracteristic(characteristic: characteristic)
+                 
+                }
+             }
+           }
+        
+    }
+    
+    
+    
+    func chackauthName(authNumber: String) {
+        
+        
+        print("of off.. ")
+        do{
+            let _ = try! db.collection("ФTRE").document(self.treID).updateData(["authNumber": authNumber]) { err in
+                if err != nil {
+                    print((err?.localizedDescription)!)
+                    return
+                }
+            }
+        }catch{}
+
+    }
+    
+     func saveCaracteristic(characteristic: Characteristic){
+         
+   
+         do{
+             let _ = try db.collection("ФTRE").addDocument(from: characteristic)
+   
+         }catch{
+             fatalError("unable to encoding task")
+         }
+   
+   
+     }
     
     
     func addInfo(infoFrom: Names, infoTo: Names){

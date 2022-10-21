@@ -37,6 +37,7 @@ struct InfoView: View {
                 }
                         .padding(.top, 30)
                         .offset(x: 30)
+            
  
                 Form{
                 Section(header: HStack {
@@ -58,7 +59,7 @@ struct InfoView: View {
                 }) {
                   
                         VStack( alignment: .leading , spacing: 15){
-                            Text( arda.trailerNumber ?? "unknow")
+                            Text( arda.trailerNumber ?? "Unknown")
                                
 
                         } .font(.system(size: 14))
@@ -70,9 +71,9 @@ struct InfoView: View {
                                 Text(name.date)
                                 HStack( spacing: 2){
                                     VStack( alignment: .leading , spacing: 5){
-                                      //  Text(name.fromName!.authNumber)
-                                        Text(name.fromName!.authName)
-                                        Text(name.fromName!.authPhone)
+                                    
+                                   //   Text(name.fromName!.authName)
+                                  //    Text(name.fromName!.authPhone)
                                         Text(name.fromName!.serviceNote)
                                             .fontWeight(.heavy)
                                             .lineLimit(self.number == num ? nil : 1)
@@ -86,7 +87,7 @@ struct InfoView: View {
                                                     }
                                                 }
                                             }) {
-                                                Text(self.number == num  ? "Lass" : "Read more...")
+                                                Text(self.number == num  ? "Less" : "Read more...")
                                                    // .font(.caption)
                                                     .fontWeight(.bold)
                                                     .font(.system(size: 10))
@@ -98,9 +99,9 @@ struct InfoView: View {
                                
                                     Spacer()
                                     VStack( alignment: .trailing , spacing: 5){
-                                    //    Text(name.toName!.authNumber)
-                                        Text(name.toName!.authName)
-                                        Text(name.toName!.authPhone)
+                                 
+                                    //  Text(name.toName!.authName)
+                                  //    Text(name.toName!.authPhone)
                                         Text(name.toName!.serviceNote)
                                             .fontWeight(.heavy)
                                         Spacer()
@@ -123,8 +124,10 @@ struct InfoView: View {
 
             }.overlay(isLoading ? ProgressView().toAnyView() : EmptyView().toAnyView())
                 .overlay(Text(arda.verifyString).foregroundColor(.red).rotationEffect(.init(degrees: -45)).font(.system(size: 50)))
+
         }
         .sheet(isPresented: $isNumberTrailerScanner){ scannerSheet }
+        
     }
     var scannerSheet: some View {
         CodeScannerView(codeTypes: [.qr] , completion: { result in
@@ -132,7 +135,10 @@ struct InfoView: View {
             case .success(let res) :
                 print("\(res)")
    //      self.scannedCode = res.string
-                self.scanner = res.string
+                let separator = res.string.components(separatedBy: "/")
+             
+            //  self.scanner = res.string
+                self.scanner = separator[0]
                 self.arda.trailerNumber = self.scanner
                 self.isNumberTrailerScanner = false
                 DispatchQueue.main.async {

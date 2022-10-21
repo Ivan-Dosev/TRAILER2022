@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WarkView: View {
     @StateObject var arda = Mara()
+    @State private var isTre     : Bool = false
     @State private var isInfo    : Bool = false
     @State private var isService : Bool = false
     @State private var isSelding : Bool = false
@@ -27,6 +28,19 @@ struct WarkView: View {
                  
                 Spacer()
                 VStack( alignment: .center , spacing: 20){
+                    Button(action: {
+                                       self.isTre = true
+                    }) {
+                        Text("My account")
+                            .padding()
+                            .foregroundColor(.gray)
+                            .frame(width: 150, height: 70)
+                            .modifier(CircleButton())
+                    }
+                    .sheet(isPresented: $isTre) {
+                        TreView()
+                    }
+                    
                     Button(action: {
                                        self.isInfo = true
                     }) {
@@ -56,7 +70,7 @@ struct WarkView: View {
                     Button(action: {
                                       self.isSelding = true
                     }) {
-                        Text("Selding")
+                        Text("Re-Sell")
                             .padding()
                             .foregroundColor(.gray)
                             .frame(width: 150, height: 70)

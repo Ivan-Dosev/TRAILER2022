@@ -18,6 +18,10 @@ struct SeldingView: View {
     @State private var scanner : String = ""
     @State private var alert   : Bool   = false
     @State private var isLoading : Bool = false
+    
+    @State private var modelTre : String = "111"
+    @State private var colorTre : String = "222"
+    @State private var dateTre  : String = "333"
  
    
     var body: some View {
@@ -40,23 +44,23 @@ struct SeldingView: View {
                     .padding(.top, 30)
                     .offset(x: 30)
                 Form{
-                    Section(header: Text("I buy trailing")) {
+                    Section(header: Text("Seller ")) {
                         VStack( alignment: .leading , spacing: 15){
                             
-                            Text(arda.taskTo?.authNumber ?? "unknow")
-                            Text(arda.taskTo?.authName ?? "unknow")
-                            Text(arda.taskTo?.authPhone ?? "unknow")
+                            Text(arda.taskTo?.authNumber ?? "Unknown")
+                            Text(arda.taskTo?.authName ?? "Unknown")
+                            Text(arda.taskTo?.authPhone ?? "Unknown")
                           
                             
                         } .font(.system(size: 14))
                     }
                     Section(header: HStack {
-                        Text("From ")
+                        Text("Buyer ")
                         Spacer()
                         Button(action: {
                                          self.isPresentingScanner = true
                         }) {
-                            Text("Scan from")
+                            Text("Scan ")
                                 .padding()
                                 .frame(width: 150, height: 40)
                                 .modifier(CircleButton())
@@ -66,9 +70,9 @@ struct SeldingView: View {
                     }) {
                       
                             VStack( alignment: .leading , spacing: 15){
-                                Text(arda.taskFrom?.authNumber ?? "unknow")
-                                Text(arda.taskFrom?.authName ?? "unknow")
-                                Text(arda.taskFrom?.authPhone ?? "unknow")
+                                Text(arda.taskFrom?.authNumber ?? "Unknown")
+                                Text(arda.taskFrom?.authName ?? "Unknown")
+                                Text(arda.taskFrom?.authPhone ?? "Unknown")
                             } .font(.system(size: 14))
        
                     }
@@ -89,7 +93,7 @@ struct SeldingView: View {
                     }) {
                       
                             VStack( alignment: .leading , spacing: 15){
-                                Text( arda.trailerNumber ?? "unknow")
+                                Text( arda.trailerNumber ?? "Unknown")
 
                             } .font(.system(size: 14))
        
@@ -123,12 +127,13 @@ struct SeldingView: View {
             }
             .sheet(isPresented: $isPresentingScanner){ scannerSheet }
             .alert(isPresented: $alert) {
-                Alert(title: Text("Blockchain"), message: Text("Do you want to save to Blockchain"), dismissButton: .default(Text("ok"), action: {
+                Alert(title: Text("Alert"), message: Text("Your data will be saved to the Blockchain"), dismissButton: .default(Text("Got it"), action: {
                     
                     saveBlockchane()
+                    arda.isID = true
  
                     self.alert.toggle()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 20){
                         presentationMode.wrappedValue.dismiss()
                     }
                   
@@ -147,12 +152,17 @@ struct SeldingView: View {
     
     func saveData() {
         
-        let infoTo = Names(authName: arda.taskTo?.authName ?? "unknow" , authNumber: arda.taskTo?.authNumber ?? "unknow", authPhone: arda.taskTo?.authPhone ?? "unknow", treNumber: arda.trailerNumber ?? "unknow", serviceNote: "BUYES")
+        let infoTo = Names(authName: arda.taskTo?.authName ?? "Unknown" , authNumber: arda.taskTo?.authNumber ?? "Unknown", authPhone: arda.taskTo?.authPhone ?? "Unknown", treNumber: arda.trailerNumber ?? "Unknown", serviceNote: "Seller")
         
-        let infoFrom = Names(authName: arda.taskFrom?.authName ?? "unknow", authNumber: arda.taskFrom?.authNumber ?? "unknow", authPhone: arda.taskFrom?.authPhone ?? "unknow", treNumber:  arda.trailerNumber ?? "unknow", serviceNote: "SALED")
+        let infoFrom = Names(authName: arda.taskFrom?.authName ?? "Unknown", authNumber: arda.taskFrom?.authNumber ?? "Unknown", authPhone: arda.taskFrom?.authPhone ?? "Unknown", treNumber:  arda.trailerNumber ?? "Unknown", serviceNote: "Buyer")
+        
+        let characteristic = Characteristic(authNumber: arda.taskFrom?.authNumber ?? "Unknown", modelTre: self.modelTre, colorTre: colorTre, dateTre: dateTre, scanner:  arda.trailerNumber ?? "Unknown")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            arda.addInfo(infoFrom: infoFrom, infoTo: infoTo)
+            arda.addInfo(infoFrom: infoFrom, infoTo:    infoTo)
+        
+            arda.isCharacteristic(characteristic: characteristic)
+
             self.alert.toggle()
         }
         
@@ -162,12 +172,14 @@ struct SeldingView: View {
               switch result {
               case .success(let res) :
                   print("\(res)")
-     //      self.scannedCode = res.string
                   self.scanner = res.string
+              
                   self.isPresentingScanner = false
+                  
                   DispatchQueue.main.async {
                       arda.loadDataFrom(name: self.scanner)
                   }
+                  
               case .failure(let err):
                   print("\(err)")
                   self.isPresentingScanner = false
@@ -180,8 +192,16 @@ struct SeldingView: View {
             switch result {
             case .success(let res) :
                 print("\(res)")
+                
+                let  separator = res.string.components(separatedBy: "/")
+                if separator.count > 3 {
+                    self.modelTre = separator[1]
+                    self.colorTre = separator[2]
+                    self.dateTre  = separator[3]
+                }
 
-                self.arda.trailerNumber = res.string
+
+                self.arda.trailerNumber = separator[0]
                 self.isNumberTrailerScanner = false
 
               

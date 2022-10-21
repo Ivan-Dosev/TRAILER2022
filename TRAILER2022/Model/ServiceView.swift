@@ -53,23 +53,23 @@ struct ServiceView: View {
                             } .font(.system(size: 14))
        
                     }
-                    Section(header: Text("Repair request ")) {
+                    Section(header: Text("Repaired from")) {
                         VStack( alignment: .leading , spacing: 15){
                             
-                            Text(arda.taskTo?.authNumber ?? "unknow")
-                            Text(arda.taskTo?.authName ?? "unknow")
-                            Text(arda.taskTo?.authPhone ?? "unknow")
+                            Text(arda.taskTo?.authNumber ?? "Unknown")
+                            Text(arda.taskTo?.authName ?? "Unknown")
+                            Text(arda.taskTo?.authPhone ?? "Unknown")
                           
                             
                         } .font(.system(size: 14))
                     }
                     Section(header: HStack {
-                        Text("Repaired from ")
+                        Text("Repair request")
                         Spacer()
                         Button(action: {
                                          self.isPresentingScanner = true
                         }) {
-                            Text("Scan from")
+                            Text("Scan")
                                 .padding()
                                 .frame(width: 150, height: 40)
                                 .modifier(CircleButton())
@@ -79,9 +79,9 @@ struct ServiceView: View {
                     }) {
                       
                             VStack( alignment: .leading , spacing: 15){
-                                Text(arda.taskFrom?.authNumber ?? "unknow")
-                                Text(arda.taskFrom?.authName ?? "unknow")
-                                Text(arda.taskFrom?.authPhone ?? "unknow")
+                                Text(arda.taskFrom?.authNumber ?? "Unknown")
+                                Text(arda.taskFrom?.authName ?? "Unknown")
+                                Text(arda.taskFrom?.authPhone ?? "Unknown")
                             } .font(.system(size: 14))
        
                     }
@@ -102,7 +102,7 @@ struct ServiceView: View {
                     }) {
                       
                             VStack( alignment: .leading , spacing: 15){
-                                Text( arda.trailerNumber ?? "unknow")
+                                Text( arda.trailerNumber ?? "Unknown")
 
                             } .font(.system(size: 14))
        
@@ -136,12 +136,12 @@ struct ServiceView: View {
             }
             .sheet(isPresented: $isPresentingScanner){ scannerSheet }
             .alert(isPresented: $alert) {
-                Alert(title: Text("Blockchain"), message: Text("Do you want to save to Blockchain"), dismissButton: .default(Text("Yes"), action: {
+                Alert(title: Text("Alert"), message: Text("Your data will be saved to the Blockchain"), dismissButton: .default(Text("Got it"), action: {
                     
                     saveBlockchane()
 
                     self.alert.toggle()
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3){
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 20){
                         presentationMode.wrappedValue.dismiss()
                     }
 
@@ -158,12 +158,12 @@ struct ServiceView: View {
     
     func saveData() {
         
-        let infoTo = Names(authName: arda.taskTo?.authName ?? "unknow" , authNumber: arda.taskTo?.authNumber ?? "unknow", authPhone: arda.taskTo?.authPhone ?? "unknow", treNumber: arda.trailerNumber ?? "unknow", serviceNote: "request")
+        let infoTo = Names(authName: arda.taskTo?.authName ?? "Unknown" , authNumber: arda.taskTo?.authNumber ?? "Unknown", authPhone: arda.taskTo?.authPhone ?? "Unknown", treNumber: arda.trailerNumber ?? "Unknown", serviceNote: "Service")
 
-        let infoFrom = Names(authName: arda.taskFrom?.authName ?? "unknow", authNumber: arda.taskFrom?.authNumber ?? "unknow", authPhone: arda.taskFrom?.authPhone ?? "unknow", treNumber:  arda.trailerNumber ?? "unknow", serviceNote: text)
+        let infoFrom = Names(authName: arda.taskFrom?.authName ?? "Unknown", authNumber: arda.taskFrom?.authNumber ?? "Unknown", authPhone: arda.taskFrom?.authPhone ?? "Unknown", treNumber:  arda.trailerNumber ?? "Unknown", serviceNote: text )
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            arda.addInfo(infoFrom: infoFrom, infoTo: infoTo)
+            arda.addInfo(infoFrom: infoFrom, infoTo:    infoTo)
             self.alert.toggle()
         }
         
@@ -173,9 +173,10 @@ struct ServiceView: View {
               switch result {
               case .success(let res) :
                   print("\(res)")
-     //      self.scannedCode = res.string
                   self.scanner = res.string
+              
                   self.isPresentingScanner = false
+                  
                   DispatchQueue.main.async {
                       arda.loadDataFrom(name: self.scanner)
                   }
@@ -191,11 +192,12 @@ struct ServiceView: View {
             switch result {
             case .success(let res) :
                 print("\(res)")
+                
+                let  separator = res.string.components(separatedBy: "/")
 
-                self.arda.trailerNumber = res.string
+                self.arda.trailerNumber = separator[0]
                 self.isNumberTrailerScanner = false
-
-              
+                
             case .failure(let err):
                 print("\(err)")
                 self.isNumberTrailerScanner = false

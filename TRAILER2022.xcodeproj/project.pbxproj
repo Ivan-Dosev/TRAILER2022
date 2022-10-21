@@ -13,6 +13,7 @@
 		6E093EC827A6FECB009A2E4F /* SeldingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E093EC727A6FECB009A2E4F /* SeldingView.swift */; };
 		6E093ECA27A70319009A2E4F /* DismissView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E093EC927A70319009A2E4F /* DismissView.swift */; };
 		6E0E1CAA27A66AE10035A3EF /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0E1CA927A66AE10035A3EF /* QRCodeView.swift */; };
+		6E10E40A27B8265400FE6752 /* TreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E10E40927B8265400FE6752 /* TreView.swift */; };
 		6E14D35627A5AAF20085934D /* AuthRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E14D35527A5AAF20085934D /* AuthRegistration.swift */; };
 		6E14D35827A5AEA30085934D /* FirstProView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E14D35727A5AEA30085934D /* FirstProView.swift */; };
 		6E14D35A27A5AEBF0085934D /* Adress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E14D35927A5AEBF0085934D /* Adress.swift */; };
@@ -68,6 +69,7 @@
 		6E093EC927A70319009A2E4F /* DismissView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissView.swift; sourceTree = "<group>"; };
 		6E0E1CA827A655BA0035A3EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6E0E1CA927A66AE10035A3EF /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		6E10E40927B8265400FE6752 /* TreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreView.swift; sourceTree = "<group>"; };
 		6E14D35527A5AAF20085934D /* AuthRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRegistration.swift; sourceTree = "<group>"; };
 		6E14D35727A5AEA30085934D /* FirstProView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstProView.swift; sourceTree = "<group>"; };
 		6E14D35927A5AEBF0085934D /* Adress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Adress.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				6E3AD4D327A4F29C00C02EED /* ModelView.swift */,
 				6E0E1CA927A66AE10035A3EF /* QRCodeView.swift */,
 				6E093EC127A6F8B3009A2E4F /* WarkView.swift */,
+				6E10E40927B8265400FE6752 /* TreView.swift */,
 				6E21129E27A98E830029A882 /* LogoView.swift */,
 				6E093EC327A6FEA7009A2E4F /* InfoView.swift */,
 				6E093EC527A6FEB8009A2E4F /* ServiceView.swift */,
@@ -366,6 +369,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E33DCEE27B1345900674A34 /* ContractHelpers.swift in Sources */,
+				6E10E40A27B8265400FE6752 /* TreView.swift in Sources */,
 				6E3AD4D227A4F1EE00C02EED /* FirebaseModel.swift in Sources */,
 				6E33DCF327B1345900674A34 /* Networks.swift in Sources */,
 				6E093EC627A6FEB8009A2E4F /* ServiceView.swift in Sources */,

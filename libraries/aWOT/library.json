@@ -1,0 +1,18 @@
+{
+  "name": "aWOT",
+  "keywords": "wifi, ethernet, http, web, server, rest",
+  "description": "aWOT is a web server library compatible with multiple different board architectures and networking solutions.",
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/lasselukkari/aWOT.git"
+  },
+  "frameworks": "arduino",
+  "platforms":
+  [
+    "atmelavr",
+    "atmelsam",
+    "espressif",
+    "teensy"
+  ]
+}
