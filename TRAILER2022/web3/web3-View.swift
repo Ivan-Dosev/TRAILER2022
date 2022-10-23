@@ -14,7 +14,7 @@ import CryptoKit
  var contract:ProjectContract?
  
  var web3:web3?
- var network:Network = .rinkeby
+ var network:Network = .goerli 
  var wallet:Wallet?
  var password = "dakata_7b" // leave empty string for ganache
 

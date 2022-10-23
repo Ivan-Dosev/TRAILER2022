@@ -14,7 +14,7 @@ enum ContractMethods:  String {
     case getProjectTitle = "retrieve"
 }
 
-var contractAddress = "0xdfd3B1152612Ea93E2CB9361BF39d56a96eC2558"
+var contractAddress = "0x8f4B65557906e4C20970B8aC11fe728C7E140991"
 
 let contractABI =
      """
